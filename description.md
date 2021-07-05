@@ -21,10 +21,10 @@
 
 
 ## Commands:
-- **ctrl+b** -      right sidebar
-- **ctrl+p** -		current files
-- **ctrl+shift+p** -prefs
-- **shift+alt** -   copy line
+- **ctrl+b**        - right sidebar
+- **ctrl+p**        - current files
+- **ctrl+shift+p**  - prefs
+- **shift+alt+**    - copy line
 
 
 
