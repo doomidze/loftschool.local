@@ -1,40 +1,62 @@
-# Hello
+# IDE customizing
 
-## Hi
+## VSCode plugins:
 
-**world**
-
-
-## Print a page
-
-1. Go to **File > Print**.
-2. Click the **Print** button.
-
-
-- [AngularJS] - HTML enhanced for web apps!
-- [Twitter Bootstrap] - great UI boilerplate for modern web apps
+- vscode-icons
+- Bracket Pair Colorizer 2
+- Auto Rename Tag
+- auto close tag
+- open in browser
+- EditorConfig for VS Code
+- css peek
+- Import Cost
+- settings sync
 
 
-> The overriding design goal for Markdown's
-> formatting syntax is to make it as readable
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
+## Settings:
+- save on focus (on)
+- word wrap     (on)
+- markdown      (!)
+- snippets      (!)
+
+
+## Commands:
+- **ctrl+b** -      right sidebar
+- **ctrl+p** -		current files
+- **ctrl+shift+p** -prefs
+- **shift+alt** -   copy line
 
 
 
-## Installation
+## Debugging
+- **debugger**		(breakpoint in file)
+- **breakpoints**	(debugger in browser)
 
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+- edit is file is Sources, ctrl+s, run script again
+- в **watch** можно следить за переменными (например, сложить значения переменных на определенном участке брекпоинта)
+- edit breakpoint(condition), temporary deactivate breakpoints
+- **Event Listeners**
 
-Install the dependencies and devDependencies and start the server.
+## Console in browser
+- **console.log(el)**
+- **console.trace()** показує послідовність дії скрипта
 
+> - **$0($0 - $4)** - в консолі показує теперішній елемент веб-інспектора
+> - **$('#el')**    - в консолі показує елемент
+
+- **node filename.js**  (in terminal) - запуск файла
+- **console.table(el)** (console/terminal) - console.log в таблиці(для массивів)
+
+> - **console.time('timer')**       - speedtest of operation(just name)
 ```sh
-cd dillinger
-npm i
-node app
+some script
 ```
+> - **console.timeEnd('timer')**    -end of test
+
+- `web inspector -> network -> file preview`
 
 
 | Plugin | README |
 | ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
+| [Markdown](https://guides.github.com/features/mastering-markdown) | github.com/features/mastering-markdown|
 | GitHub | [plugins/github/README.md][PlGh] |
