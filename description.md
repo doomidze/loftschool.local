@@ -21,10 +21,17 @@
 
 
 ## Commands:
-- **ctrl+b**        - right sidebar
-- **ctrl+p**        - current files
-- **ctrl+shift+p**  - prefs
-- **shift+alt+**    - copy line
+- **ctrl+b**            - right sidebar
+- **ctrl+p**            - current files
+- **ctrl+shift+p**      - prefs
+- **shift+alt+arrow**   - copy line
+- **ctrl+shift+d**      - run(debug)
+- **ctrl+shift+e**      - explorer
+- **alt+left**          - back
+- **ctrl+`**            - terminal
+- **ctrl+1**            - editor
+- **ctrl+q**            - list of views
+- **Ctrl+Space**        - IntelliSense 
 
 
 
@@ -54,6 +61,9 @@ some script
 > - **console.timeEnd('timer')**    -end of test
 
 - `web inspector -> network -> file preview`
+
+## Interesting
+> **arguments[0]** - содержит передающийся параметр для каждой функции внутри нее
 
 
 | Plugin | README |
