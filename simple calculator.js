@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     function fn(a, b) {
-        console.log(arguments);
+        // console.log(arguments);
     }
     fn(2, 3);
 

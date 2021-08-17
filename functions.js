@@ -14,10 +14,25 @@ console.log(result)
 let fn2 = function fn2() {
     return
 }
+console.log(' ')
+
+/*
+function foo() {
+    bar();
+    var x = 1;
+}
+на самом деле интерпретируется так:
+function foo() {
+    var x;
+    bar();
+    x = 1;
+}
+*/
+//Имя function expressions может быть удобно при возникновении ошибок. Консоль сообщит вам, что это за функция, вместо того, чтобы указывать anonymous aka stack trace 
 
 
-
-// если функция ничего не возвращает(нет return) - она возвращает undefined
+console.warn('если в функцию не передается параметр - ему присваивается значение undefined')
+console.warn('если функция ничего не возвращает(нет return) - она возвращает undefined')
 console.log('функция в функции')
 // функция в функции
 function inner(otherFn) {
@@ -31,7 +46,7 @@ inner(inner2)
 /*inner(function inner2() { // - function expression
     console.log('hello');
 }) тоже самое*/
-
+console.log(' ')
 
 
 // стрелочные функции(всегда expression)
@@ -46,6 +61,7 @@ let a2 = a.map(function (n) { // let a2 = a.map(n => n * n)
 })
 console.log(a);
 console.log(a2);
+console.log(' ')
 
 
 
@@ -81,17 +97,18 @@ let total = filter(arr, function (number) {
 });
 */
 console.log(total);
-
+console.log(' ')
 
 
 // example передачи  функции в функцию
-console.log('передачи  функции в функцию')
+console.log('передачи функции в функцию')
 function functi(someFn) {
     someFn()
 }
 functi(function () {
     return 1
 });
+console.log(' ')
 
 /*------------------*/
 
@@ -101,6 +118,7 @@ function callFuncton(fn) {
 callFuncton(function () {
     return 10 + 10;
 });
+console.log(' ')
 
 /*------------------*/
 function func1() {
@@ -120,6 +138,7 @@ var f = func1();
 console.log(f()())
 console.log(func1());
 // вызов f() нужен для того, чтобы вызвать функцию внутри функции
+console.log(' ')
 
 /*--------------------------------------------------------------------------------*/
 
@@ -138,8 +157,41 @@ function sum(num1, num2, callback) {
     }
 }
 sum(5, 11, outputResult);
+console.log(' ')
 
 /*--------------------------------------------------------------------------------*/
+
+console.log('Вызов функции из функции')
+// из файла не работает, а напрямую в браузере - да
+function returnCounter2(number2) {
+    document.write('returnCounter ' + number2 + '<br>');
+
+    function func(number2) {
+        document.write('func ' + number2);
+    }
+
+    return {
+        func: func  //возвращается объект, где ключ в итоге название, а значение - функция
+    }
+}
+
+var outer = returnCounter2("xx");
+//outer.func('zzcz');
+//returnCounter2("xx").func('zzcz');
+console.log(' ')
+
+/*--------------------------------------------------------------------------------*/
+
+// Виклик дочірньої функции всередині функції з іншої функції
+console.log('Виклик дочірньої функции всередині функції з іншої функції')
+function Hello() {
+    this.helloAgain = function helloAgain() { } // this is in the conext Hello
+    console.log('Who am I', this)
+}
+var hello = new Hello();
+function MyFunction() {
+    hello.helloAgain();
+}
 
 /*
  Функция должна принимать число (значение по умолчанию - 0) и возвращать функцию (F)
@@ -159,6 +211,7 @@ function F(number) {
     return ++number
 }
 returnCounter(7, F)
+console.log(' ')
 
 
 // анонимная функция
@@ -167,7 +220,7 @@ console.log('анонимная функция');
     let c = 'hello'
     console.log(a, b, c);
 })(1, 2)
-
+console.log(' ')
 
 
 // hoisting
@@ -199,6 +252,42 @@ if (10 > 100) {
     var s = 1000
 }
 console.log(u, s)  // undefined, 1000
+console.log(' ')
 
 
-console.log('Задание')
+console.log('Задание 1')
+/*
+ Задание 1:
+
+ Функция должна принимать число (значение по умолчанию - 0) и возвращать функцию (F)
+ При вызове F, переданное число должно быть увеличено на единицу и возвращено из F
+ */
+function returnCounter2(number2 = 0) {
+    console.log('returnCounter ' + number2);
+
+    return function F1() {
+        console.log('F1 ' + ++number2);
+    }
+}
+returnCounter2(10)() // вызывает функцию после return
+// можно ли вызвать ф-цию из функции по имени? (164)
+console.log(' ')
+
+
+// 
+function simple(yes, no, text) {
+    if (confirm(text))
+        yes()
+    else no()
+}
+function ok() {
+    console.log(' drug')
+}
+function no() {
+    console.log(' pidor')
+}
+//simple(ok, no, 'hello?')
+console.log(' ')
+
+
+// Если вы пишете рекурсивную функцию - обязательно предусмотрите условие выхода из этой функции
