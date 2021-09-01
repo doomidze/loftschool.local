@@ -76,6 +76,7 @@ function filter(arr, someFn) {              // подставляется фун
         }
     }
     return result                           // и возвращаем
+    //console.log(result);
 }
 let arr = [1, 3, 5, 10, 77, 2, 15]
 /*
